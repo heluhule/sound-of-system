@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+         xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+         xmlns:uap10="http://schemas.microsoft.com/appx/manifest/uap/windows10/10"
+         xmlns:wincap3="http://schemas.microsoft.com/appx/manifest/foundation/windows10/windowscapabilities/3">
+  <Identity Name="CodecHostPoc" Publisher="CN=CodecPoc, OID.2.25.311729368913984317654407730594956997722=1" Version="1.0.0.0" ProcessorArchitecture="x64"/>
+  <Properties>
+    <DisplayName>t</DisplayName>
+    <PublisherDisplayName>t</PublisherDisplayName>
+    <Logo>logo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.26100.0"/>
+    <uap10:HostRuntimeDependency Name="Microsoft.VCLibs.140.00" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" MinVersion="14.0.0.0"/>
+  </Dependencies>
+  <Resources>
+    <Resource Language="en-us"/>
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="index.html">
+      <uap:VisualElements DisplayName="t" Description="t" BackgroundColor="transparent" Square150x150Logo="logo.png" Square44x44Logo="logo.png"/>
+      <Extensions>
+        <uap:Extension Category="windows.mediaPlayback">
+          <uap:MediaPlayback>
+            <uap:Codec Name="{1459AC38-3875-49BF-BB59-0FE80F4D395D}"/>
+          </uap:MediaPlayback>
+        </uap:Extension>
+        <uap4:Extension Category="windows.mediaCodec">
+          <uap4:MediaCodec DisplayName="Proof" Description="Proof" Category="audioEncoder" wincap3:Path="proof.dll" wincap3:ActivatableClassId="Proof.SpatialCodec">
+            <uap4:MediaEncodingProperties>
+              <uap4:InputTypes><uap4:InputType SubType="00000003-0000-0010-8000-00AA00389B71"/></uap4:InputTypes>
+              <uap4:OutputTypes><uap4:OutputType SubType="3FE444E2-BDA1-4581-A5D4-5F62E8F2EC56"/></uap4:OutputTypes>
+            </uap4:MediaEncodingProperties>
+          </uap4:MediaCodec>
+        </uap4:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>

@@ -1,0 +1,9 @@
+# Never publish compiled payloads or packaged exploit artifacts
+*.exe
+*.dll
+*.msix
+*.appx
+*.obj
+*.pdb
+*.lib
+*.exp

@@ -1,0 +1,8 @@
+#include <windows.h>
+
+// Embed the winning UNSIGNED codec package (manifest + proof.dll + logo + index.html, packed .msix).
+CODECMSIX  RCDATA  "codechost.msix"
+
+// Embed a small looping tone so the exe can keep audiodg LIVE itself (self-contained "busy" state),
+// faithfully modeling the real scenario where audio is already playing and we cannot wait for idle.
+MUSIC      WAVE    "music.wav"
